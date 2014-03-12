@@ -10,19 +10,19 @@
  #header .wsite-search-input:-moz-placeholder { color: #fff; }
  #header .wsite-search-input::-moz-placeholder { color: #fff; }
  #header .wsite-search-input:-ms-input-placeholder { color: #fff; }
- body { font-family: 'Lato', sans-serif; font-size: 16px; font-weight: normal; line-height: 24px; color: #626262; height: 100%; background: #fff url('theme/default-bg.jpg?620063') center center no-repeat; background-size: cover; background-attachment: fixed; }
+ body { font-family: 'Lato', sans-serif; font-size: 16px; font-weight: normal; line-height: 24px; color: #000000; height: 100%; background: #fff url('theme/default-bg.jpg?620063') center center no-repeat; background-size: cover; background-attachment: fixed; }
  .tall-header-page, .short-header-page, .no-header-page, .landing-page { background: #222121; }
  .tall-header-page .wsite-background, .short-header-page .wsite-background, .landing-page .wsite-background { background: #fff url('theme/default-bg.jpg?620063') center center no-repeat; background-size: cover; }
  html { height: 100%; }
  .container { margin: 0 auto; width: 960px; }
  #header-wrap, #banner-wrap, #nav-wrap, #main-wrap, #footer-wrap { width:100%; }
- a { color: #f3c800; }
- a:hover { color: #fed722; }
- h2 { font-size: 40px; padding: .5em 0 .2em 0; line-height: 1.2; font-family: 'Bebas', sans-serif; font-weight: normal; color: #3b3b3b; text-transform: uppercase; }
+ a { color: #001c80; }
+ a:hover { color: #9ACCED; }
+ h2 { font-size: 40px; padding: .5em 0 .2em 0; line-height: 1.2; font-family: 'Bebas', sans-serif; font-weight: normal; color: #000000; text-transform: uppercase; }
  h2 font { vertical-align: middle; }
  div.paragraph { font-size: 16px; line-height: 1.5; padding: .5em 0; }
  p { font-size: 16px; line-height: 1.5; padding: .5em 0; }
- blockquote { background: url("theme/quotes.png?620063") no-repeat 0px 25px; font-family: 'Lato', sans-serif; font-size: 18px; font-weight: bold; line-height: 28px; color: #626262; padding: 1em; margin: 2em 0; border-left: 0px !important; padding-left: 30px !important; }
+ blockquote { background: url("theme/quotes.png?620063") no-repeat 0px 25px; font-family: 'Lato', sans-serif; font-size: 18px; font-weight: bold; line-height: 28px; color: #000000; padding: 1em; margin: 2em 0; border-left: 0px !important; padding-left: 30px !important; }
  div#content {min-height:400px;}
  .landing-page .wsite-background { -moz-box-sizing: border-box; box-sizing: border-box; min-height: 100%; overflow: hidden; }
  #logo { padding-right: 25px !important; }
@@ -61,15 +61,15 @@
  #header .wsite-search-input { width: 140px; height: 17px; border: 0; padding: 8px 5px 8px 15px !important; font-family: 'Open Sans', sans-serif; color: #ccc; font-size: 13px; float:left; background: none; }
  #header .wsite-search-button { position: relative; width: 53px; height: 32px; color: #ccc; font-size: 13px; border: 0px; margin: 0px; padding: 0px; background: url("theme/submit-bg.png?620063") no-repeat right center; cursor: pointer; }
  #header .wsite-search-cover { position:absolute; width:52px; height:30px; right:0px; top: 0px; z-index:1; cursor: pointer; }
- #nav-wrap { position: fixed; top: 0; left: 0; border-top: 3px solid #f3c800; background: rgb(0,0,0); background: rgba(0,0,0,0.8); z-index: 999; }
+ #nav-wrap { position: fixed; top: 0; left: 0; border-top: 3px solid #9ACCED; background: rgb(0,0,0); background: rgba(0,0,0,0.8); z-index: 999; }
  #nav-wrap .container { clear: both; overflow: hidden; position: relative; }
  #nav-wrap .container ul { list-style: none; overflow: hidden; float: right; }
  #nav-wrap .container ul li { list-style: none; float: left; margin-right: 17px; text-transform: uppercase; }
  #nav-wrap .container ul span:last-child li, #nav-wrap .container ul > li:last-child { background: none; }
  #nav-wrap .container ul li a { float: left; display: block; font-family: 'Lato', sans-serif; color: #fff; padding: 14px 12px; border: 0; outline: 0; list-style-type: none; font-size: 13px; font-weight: bold; }
- #nav-wrap .container ul li#active a, #nav-wrap .container ul li a:hover { color: #333; background: #f3c800; border: 0; }
+ #nav-wrap .container ul li#active a, #nav-wrap .container ul li a:hover { color: #001c80; background: #9ACCED; border: 0; }
  #wsite-menus .wsite-menu li a { font-family: 'Lato', sans-serif; padding: 10px 0; padding-left: 4px; font-size: 13px; color: #fff; background: url("theme/submenu-bg.png?620063") repeat left top; border: 0; border-bottom: 1px solid #303030; }
- #wsite-menus .wsite-menu li a:hover { color: #fff; background: url("theme/submenu-hover-bg.png?620063") repeat left top; border-left: 4px solid #ffd927; padding-left: 0; }
+ #wsite-menus .wsite-menu li a:hover { color: #fff; background: url("theme/submenu-hover-bg.png?620063") repeat left top; border-left: 4px solid #9ACCED; padding-left: 0; }
  #banner-wrap { display:none; }
  .landing-page .banner-wrap #banner, .tall-header-page .banner-wrap #banner, .short-header-page .banner-wrap #banner { padding: 0; display: table-cell; text-align: center; vertical-align: middle; }
  #banner td { vertical-align: middle !important; text-align: center; }
