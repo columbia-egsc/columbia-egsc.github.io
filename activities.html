@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html><head><title>Activities - EGSC</title>
+<html><head><title>Weekly updates</title>
 <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -124,7 +124,23 @@ else document.observe('dom:loaded', initFlyouts);
 }
 })(window._W && _W.jQuery)
 //-->
-</script></head><body class="no-header-page wsite-theme-light wsite-page-activities">
+</script>
+
+<link rel="stylesheet" href="files/bootstrap-theme.min.css" type="text/css">
+		<link rel="stylesheet" href="files/bootstrap.min.css" type="text/css">
+		<link rel="stylesheet" href="files/people.css" type="text/css">
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		
+<script> 
+				$( document ).ready(function(){
+				  $.get('currentnewsletter.html', function(data) {
+					
+					$('#newsletter').html(data);
+				 })
+				});
+			</script> 
+
+</head><body>
 <div id="nav-wrap">
 		<div class="container">
 			<table id="header">
@@ -135,68 +151,10 @@ else document.observe('dom:loaded', initFlyouts);
 				</tr>
 			</tbody></table>
 		</div><!-- end container -->
-	</div><!-- end nav-wrap -->        		
-
-    <div id="main-wrap">
-        <div class="container">
-   			<div id="wsite-content" class="wsite-elements wsite-not-footer">
-
-<div class="paragraph" style="text-align: left; display: block;">Fun! Career! Peers!<br>
-We are everywhere in the engineering students' life. Just a peek!</div>
-<hr style="width: 100%; clear: both; visibility: hidden;">
-
-<div><div style="height: 40px;"></div>
-    <div class="slider-wrapper theme-default">
-		<div id="slider" class="nivoSlider" style:="" height:300px="">
-        	<img src="images/RBC_info.jpg" alt="" title="RBC Capital Tech recruit talk">
-			<img src="images/2.jpg" alt="" title="150th anniversary party!">
-			<img src="images/6.jpg" alt="" title="NY cares valunteer day">
+	</div><!-- end nav-wrap -->  
+		<div id="newsletter">
 		</div>
-	</div>
-<div><div style="height: 40px;"></div>
-
-<div><div id="539933985509743234" style="width: 100%; overflow-y: hidden;" class="wcustomhtml" align="left"><div class="document">
-			<h1 align="center">EGSC Events</h1>
-			<br><br><br>
-			    <hr><hr>
-			    <h1 align="right">150th Anniversary Social - Feb 2014</h1>
-			    <hr><hr>
-			    <br>
-				<br>
-			    <div align="left">
-			    Awesome music and unlimited food. Once every 150 years!
-			    <br><br>
-				<img src="images/2.jpg" width="600">
-				<br>
-				<br><br><br><br><br><br><br>
-				<hr><hr>
-				</div>
-				<h1 align="left">EGSC Valentine interschool Mixer</h1>
-				<hr><hr>
-				<br><br>
-				Loud music VIP bar!
-                InterSchool Mingle and Mix!
-				<br>
-				<br>
-				<div align="right">
-				<img src="images/3.jpg" alt="" align="middle">
-				<br><br><br><br><br><br><br><br>
-				</div>
-				
-				
-				
-				
-			</div></div>
-
-
-
-</div></div>
-</div></div>
-
-        </div><!-- end container -->
-   </div> <!-- end main-wrap -->
-
-    <div id="footer-wrap">
+		<div id="footer-wrap">
         <div class="container">
        		<div class="wsite-elements wsite-footer">
 <div><div class="wsite-multicol"><div class="wsite-multicol-table-wrap" style="margin: 0pt 0px;">
@@ -228,7 +186,5 @@ We are everywhere in the engineering students' life. Just a peek!</div>
 </table>
 </div></div></div></div>
         </div><!-- end container -->
-    </div><!-- end footer-wrap -->
-<script type="text/javascript" src="files/theme/custom.js"></script>
-
-</body></html>
+    </div>
+	</body></html>

@@ -1,3 +1,40 @@
+/* Personal Styles: SK */
+ul.list { 
+	list-style-type: disc;
+	padding: 20px !important;
+}
+
+.left {
+	margin: 0 10px 10px 0;
+	float: left;
+}
+
+.right {
+	margin: 0 0 10px 10px;
+	float: right;
+}
+
+.person_row {
+	display: table-row;
+	margin: 10px 0 0 0;
+}
+
+#newsletter  ul{
+	list-style-type: disc;
+	padding: 20px !important;
+}
+
+#newsletter {
+	margin-top: 35px;
+}
+
+ol.list > li { list-style-type: decimal;}
+
+/* End Personal Styles: SK */ 
+ 
+ 
+ 
+ 
  ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, body, html, div.paragraph, blockquote, fieldset, input { margin: 0; padding: 0; }
  ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, body, html, p, blockquote, fieldset, input { margin: 0; padding: 0; }
  a img { border: 0; }
@@ -18,7 +55,9 @@
  #header-wrap, #banner-wrap, #nav-wrap, #main-wrap, #footer-wrap { width:100%; }
  a { color: #001c80; }
  a:hover { color: #9ACCED; }
- h2 { font-size: 40px; padding: .5em 0 .2em 0; line-height: 1.2; font-family: 'Bebas', sans-serif; font-weight: normal; color: #000000; text-transform: uppercase; }
+ h1 { font-size: 40px; padding: .5em 0 .2em 0; line-height: 1.2; font-weight: normal; color: #000000; text-transform: uppercase; }
+ 
+ h2 { font-size: 25px; padding: .5em 0 .2em 0; line-height: 1.2;  font-weight: normal; color: #000000; text-transform: uppercase; }
  h2 font { vertical-align: middle; }
  div.paragraph { font-size: 16px; line-height: 1.5; padding: .5em 0; }
  p { font-size: 16px; line-height: 1.5; padding: .5em 0; }
