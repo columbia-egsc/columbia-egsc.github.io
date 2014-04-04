@@ -34,7 +34,10 @@
   <script> 
       $( document ).ready(function(){
         $.get('currentnewsletter.html', function(data) {
-        
+        data = data.replace('<img style="width: 2px; height: 2px;" alt="" src="https://ga-beacon.appspot.com/UA-48374386-1/newsletter/2_24_2014">', '');
+        data = data.replace(/background-color[^;]*;/g,'')
+        data = data.replace(/color[^;]*;/g,'')
+        data = data.replace('https://raw.github.com/columbiaegsc/newsletter_images/master/egsc_logo_dark_back.png','media/logos/egsc_logo-light-background.png');
         $('#newsletter').html(data);
        })
       });
@@ -73,7 +76,9 @@
 		
 
     <div id="main-wrap">
-  		<div id="newsletter">
+      <div id="container">
+		    <div id="newsletter">
+        <div>
   		</div>
     </div>
 
