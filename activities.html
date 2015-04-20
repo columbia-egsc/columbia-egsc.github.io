@@ -39,6 +39,7 @@
         data = data.replace(/color[^;]*;/g,'')
         data = data.replace(/<table id="templateFooter"([\w\W])*?table>/g,'')
         data = data.replace('http://columbia-egsc.github.io/egsc_logos/egsc_logo_light_blue.png','http://columbia-egsc.github.io/egsc_logos/egsc_logo_dark_blue.png');
+        data = data.replace(/<table id="backgroundTable"[\w\W]*?width:[\w\W]*?;/g,'<table id="backgroundTable" style="margin: 0pt; padding: 0pt;  height: 100%; width: 600px;');
         $('#newsletter').html(data);
        })
       });
