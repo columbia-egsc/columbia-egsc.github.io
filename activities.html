@@ -37,7 +37,8 @@
         data = data.replace('<img style="width: 2px; height: 2px;" alt="" src="https://ga-beacon.appspot.com/UA-48374386-1/newsletter/2_24_2014">', '');
         data = data.replace(/background-color[^;]*;/g,'')
         data = data.replace(/color[^;]*;/g,'')
-        data = data.replace('https://raw.github.com/columbiaegsc/newsletter_images/master/egsc_logo_dark_back.png','media/logos/egsc_logo-light-background.png');
+        data = data.replace(/<table id="templateFooter"([\w\W])*?table>/g,'')
+        data = data.replace('http://columbia-egsc.github.io/egsc_logos/egsc_logo_light_blue.png','http://columbia-egsc.github.io/egsc_logos/egsc_logo_dark_blue.png');
         $('#newsletter').html(data);
        })
       });
