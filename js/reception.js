@@ -3,11 +3,34 @@ var authors = [];
 var users = [];
 var times = [];
 var tids = [];
+var images = [];
+var tids_im = [];
 var i=1;
 var update = false;
 window.setInterval(update_tweets, 20000);
 var tweet_ind = [];
+var image_ind = [];
 var first = true;
+
+function shuffle(array) {
+  var currentIndex = array.length, temporaryValue, randomIndex ;
+
+  // While there remain elements to shuffle...
+  while (0 !== currentIndex) {
+
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+
+    // And swap it with the current element.
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+
+  return array;
+}
+
 
 function callback(wh,slide){
   if(wh.width<wh.height){
@@ -75,25 +98,58 @@ function update_tweets() {
     };
     twitterFetcher.fetch(config1);
 
-    var request = $.ajax({
-        url: 'images/backgrounds/' + '%03d'.sprintf(i+1) + '.jpg',
-        type:'HEAD',
-    });
     
-    request.fail(function(){
-        i=1;
-    });
-    back = [{src: 'images/backgrounds/' + '%03d'.sprintf(i) + '.jpg'},{src: 'images/backgrounds/' + '%03d'.sprintf(i+1) + '.jpg'}];
-   $('body').vegas('destroy');
-    $('body').vegas({
-      animation: 'random',
-      transition: 'random',
-      transitionDuration: 4000,
-      delay:10000,
-      cover: true,
-      slides: back
-    });
-    i=i+2;
+    if(images.length>0){
+      var request = $.ajax({
+          url: 'images/backgrounds/' + '%03d'.sprintf(i) + '.jpg',
+          type:'HEAD',
+      });
+      
+      request.fail(function(){
+          i=1;
+      });
+      if(!image_ind.length){
+        var x = 0;
+        while(x<images.length){
+          image_ind.push(x);
+          x++;
+        }
+        shuffle(image_ind);
+      }
+
+      back = [{src: 'images/backgrounds/' + '%03d'.sprintf(i) + '.jpg'},{src: images[image_ind.shift()]}];
+      $('body').vegas('destroy');
+        $('body').vegas({
+          animation: 'random',
+          transition: 'random',
+          transitionDuration: 4000,
+          delay:10000,
+          cover: true,
+          slides: back
+        });
+      i=i+1;
+    }
+    else{
+      var request = $.ajax({
+          url: 'images/backgrounds/' + '%03d'.sprintf(i+1) + '.jpg',
+          type:'HEAD',
+      });
+      
+      request.fail(function(){
+          i=1;
+      });
+      back = [{src: 'images/backgrounds/' + '%03d'.sprintf(i) + '.jpg'},{src: 'images/backgrounds/' + '%03d'.sprintf(i+1) + '.jpg'}];
+        $('body').vegas('destroy');
+          $('body').vegas({
+            animation: 'random',
+            transition: 'random',
+            transitionDuration: 4000,
+            delay:10000,
+            cover: true,
+            slides: back
+          });
+        i=i+2;
+    }
     // if(i>4){i=1;}
     update = true;
     in_animation();
