@@ -1,18 +1,26 @@
-
+var tweets = [];
+var authors = [];
+var users = [];
+var times = [];
+var tids = [];
 var i=1;
-window.setInterval(update_tweets, 10000);
+var update = false;
+window.setInterval(update_tweets, 20000);
 
 function update_tweets() { var config1 = {
-  "id": '598177938828308480',
+  "id": '598293690700955648',
   "domId": 'tw-widget1',
-  "maxTweets": 20,
+  "maxTweets": 1,
   "enableLinks": false,
   "showUser": true,
   "showTime": true,
   "showRetweet": false,
-  "showInteraction": false
+  "showInteraction": false,
+  "showImages": true,
+  "update": true
 };
 twitterFetcher.fetch(config1);
+
 $.ajax({
     url: 'images/backgrounds/' + '%04d'.sprintf(i) + '.jpg',
     type:'HEAD',
@@ -27,12 +35,34 @@ $.ajax({
 });
 back = [{src: 'images/backgrounds/' + '%04d'.sprintf(i) + '.jpg',fade:1000}];
 $.vegas('slideshow', {
-  delay:10000,
+  delay:20000,
   backgrounds: back
 });
 i=i+1;
+// if(i>4){i=1;}
+update = true;
+in_animation();
+setTimeout( out_animation, 15000);
 }
 
+function out_animation(){
+  if(update){
+  $('#profile-div').animo( { animation: 'flipOutY', duration: 5 } );
+$('#user').animo( { animation: 'bounceOutUp', duration: 5 } );
+$('#tweet').animo( { animation: 'flipOutX', duration: 5 , keep:false} );
+$('#timePosted').animo( { animation: 'bounceOutDown', duration: 5} );
+update = false;
+}
+}
+
+function in_animation(){
+
+  $('#profile-div').animo( { animation: 'flipInX', duration: 5 } );
+$('#user').animo( { animation: 'bounceInDown', duration: 8 } );
+$('#tweet').animo( { animation: 'bounceInRight', duration: 8 } );
+$('#timePosted').animo( { animation: 'bounceInUp', duration: 10} );
+
+}
 /* ================================
 ===  BACKGROUND SLIDER        ====
 ================================= */
@@ -45,12 +75,35 @@ i=i+1;
 // makes sure the whole site is loaded
 jQuery(window).load(function() {
         // will first fade out the loading animation
-  
+  var config1 = {
+  "id": '598293690700955648',
+  "domId": 'tw-widget1',
+  "maxTweets": 20,
+  "enableLinks": false,
+  "showUser": true,
+  "showTime": true,
+  "showRetweet": false,
+  "showInteraction": false,
+  "showImages": true,
+  "update": false
+};
+twitterFetcher.fetch(config1);
 	jQuery(".status").fadeOut();
         // will fade out the whole DIV that covers the website.
 	jQuery(".preloader").delay(1000).fadeOut("slow");
   update_tweets();
 })
+
+$(document).ready(function() {
+    $(".header").css("height",$(window).height());
+  
+       
+
+    $( window ).resize(function() {
+      $(".header").css("height",$(window).height());
+        
+  });
+});
 
 
 // /* =================================

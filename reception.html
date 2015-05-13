@@ -20,7 +20,7 @@
     ============================== -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/jquery.vegas.min.css">
-
+    <link href="css/animate-animo.css" rel="stylesheet" type="text/css">
     <!-- CUSTOM STYLES -->
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/tweets.css">
@@ -56,7 +56,7 @@
       </div>
     </div> -->
 
-    <header id="home" class="header">
+    <header id="home" class="header sec">
       <div id="sitename">
 		<div id="banner">
           <span class="wsite-logo" style="width: 100%"><a href="http://www.columbia.edu" target="_blank"><img src="images/logos/logo.png" id="crownlogo"></a>
@@ -72,7 +72,16 @@
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>-->
 
 	<!-- <section class="example1 container"> -->
-<div id="tw-widget1"></div> 
+<div id="tw-widget1">
+  <ul>
+    <li>
+      <div id="profile-div" class="profile-div"></div>
+      <div id="user" class="user"></div>
+      <div id="tweet" class="tweet"></div>
+      <div id="timePosted" class="timePosted"></div>
+    </li>
+  <ul>
+</div> 
 <!-- </section> -->
     </header> <!-- / END HOME SECTION  -->
 
@@ -83,11 +92,9 @@
     <!-- =========================
     FOOTER             
     ============================== -->
-
+<!-- 
     <footer>
       <div class="container">
-        
-        <!-- COMPANY ADDRESS-->
         <div class="col-md-5 ">
           
         </div>
@@ -105,15 +112,19 @@
           
           ©2015 The Trustees of Columbia University in the city of New York
         </div>
-      </div> <!-- / END CONTAINER -->
-    </footer> <!-- / END FOOOTER  -->
+      </div> 
+    </footer>  -->
 
     <!-- SCRIPTS -->
+     <script src="http://code.jquery.com/jquery-2.0.3.min.js" type="text/javascript"></script>
+    <script src="js/animo.js" type="text/javascript"></script>
+    
     <script src="js/String.js"></script>
     <script src="js/bootstrap.min.js"></script>
    
     <script src="js/jquery.vegas.min.js"></script>
     <script src="js/twitterFetcher.js"></script>
     <script src="js/zerif.js"></script>
+
   </body>
 </html>
