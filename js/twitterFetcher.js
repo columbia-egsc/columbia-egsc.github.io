@@ -173,28 +173,38 @@
       var div = document.createElement('div');
       div.innerHTML = data.body;
       
-
+      rnd = true;
       if(update & tweets.length>0){
         var x=0;
         var tmp = getElementsByClassName(div, 'tweet');
-        var y =0;
+        
         while(x<tmp.length){
-          if(tmp[x].getAttribute('data-tweet-id') != tids[y])
-          {
+          var y =0;
+          repeat = false;
+          while(y<tids.length){
+            if(tmp[x].getAttribute('data-tweet-id') == tids[y])
+            {
+              repeat = true;
+              break;
+            }
+            y++;
+          }
+          if(!repeat){
             tweets.unshift(getElementsByClassName(tmp[x], 'e-entry-title')[0]);
-            
+              
             authors.unshift(getElementsByClassName(tmp[x], 'p-author')[0]);
             times.unshift(getElementsByClassName(tmp[x], 'dt-updated')[0]);
             tids.unshift(tmp[x].getAttribute('data-tweet-id'));
-            x++;
-            y+=1;
+            
             handleTweets(tweets,authors,times,0);
+            rnd = false;
           }
-          else{
-
-            handleTweets(tweets,authors,times,Math.floor((Math.random() * tweets.length)));
-            break;
-          }
+          x++;
+          
+        }
+        if (rnd)
+        {
+          handleTweets(tweets,authors,times,Math.floor((Math.random() * tweets.length)));
         }
         
       }

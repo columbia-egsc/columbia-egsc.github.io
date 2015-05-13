@@ -33,7 +33,7 @@ $.ajax({
         //file exists
     }
 });
-back = [{src: 'images/backgrounds/' + '%04d'.sprintf(i) + '.jpg',fade:1000}];
+back = [{src: 'images/backgrounds/' + '%03d'.sprintf(i) + '.jpg',fade:1000}];
 $.vegas('slideshow', {
   delay:20000,
   backgrounds: back
