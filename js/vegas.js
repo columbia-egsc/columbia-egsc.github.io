@@ -184,6 +184,7 @@
 
                 if (self.settings.autoplay) {
                     self.trigger('play');
+
                 }
             }, 1);
         },
@@ -421,7 +422,7 @@
 
             } else {
                 img = new Image();
-                
+
 
                 $inner = $('<div class="vegas-slide-inner"></div>')
                     .css('background-image',    'url(' + src + ')')
@@ -447,7 +448,7 @@
             } else {
                 this.$elmt.prepend($slide);
             }
-
+            $(".vegas-slide-inner").each(function(){$(this).getBackgroundSize(callback);});
             self._timer(false);
 
             function go () {
