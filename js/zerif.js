@@ -22,7 +22,7 @@ function update_tweets() { var config1 = {
 twitterFetcher.fetch(config1);
 
 $.ajax({
-    url: 'images/backgrounds/' + '%04d'.sprintf(i) + '.jpg',
+    url: 'images/backgrounds/' + '%03d'.sprintf(i) + '.jpg',
     type:'HEAD',
     error: function()
     {
