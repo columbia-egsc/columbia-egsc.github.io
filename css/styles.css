@@ -1,6 +1,7 @@
 .twitter-timeline{
   width: 300px;
   height: 100%;
+  min-height: 
 }
 
 .header {
@@ -19,10 +20,10 @@
     }
     #main-nav.affix{
     	position: fixed !important;
-	top: 0px;
-	width: 100%;
-	z-index: 10;
-    background-color: rgba(25,64,117,1);
+		top: 0px;
+		width: 100%;
+		z-index: 10;
+	    background-color: rgba(25,64,117,1);
 
     }
     .header{
@@ -163,6 +164,7 @@ body {
 	color: #808080;
 	font-weight: normal;
 	overflow-x: hidden;
+	/*background-repeat:repeat-x;*/
 	line-height: 25px;
 }
 

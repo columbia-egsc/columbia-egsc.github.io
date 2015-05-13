@@ -40,6 +40,38 @@
   var lang = 'en';
   var permalinks = true;
 
+  function shuffle(array) {
+    var currentIndex = array.length, temporaryValue, randomIndex ;
+
+    // While there remain elements to shuffle...
+    while (0 !== currentIndex) {
+
+      // Pick a remaining element...
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex -= 1;
+
+      // And swap it with the current element.
+      temporaryValue = array[currentIndex];
+      array[currentIndex] = array[randomIndex];
+      array[randomIndex] = temporaryValue;
+    }
+
+    return array;
+  }
+  function add_one(array) {
+    var x = 0 ;
+
+    // While there remain elements to shuffle...
+    while (x<array.length) {
+
+      // Pick a remaining element...
+      array[x] = array[x]+1;
+      x++;
+    }
+
+    return array;
+  }
+
   function getElementsByClassName (node, classname) {
     var a = [];
     var regex = new RegExp('(^| )' + classname + '( |$)');
@@ -52,7 +84,7 @@
     return a;
   }
 
-  function handleTweets(tweets, authors, times,i){
+  function handleTweets(i){
     if (customCallbackFunction === null) {
       var x = tweets.length;
       var n = 0;
@@ -173,7 +205,7 @@
       var div = document.createElement('div');
       div.innerHTML = data.body;
       
-      rnd = true;
+      // rnd = true;
       if(update & tweets.length>0){
         var x=0;
         var tmp = getElementsByClassName(div, 'tweet');
@@ -195,17 +227,24 @@
             authors.unshift(getElementsByClassName(tmp[x], 'p-author')[0]);
             times.unshift(getElementsByClassName(tmp[x], 'dt-updated')[0]);
             tids.unshift(tmp[x].getAttribute('data-tweet-id'));
-            
-            handleTweets(tweets,authors,times,0);
-            rnd = false;
+            add_one(tweet_ind);
+            tweet_ind.unshift(0);
+            // handleTweets(tweets,authors,times,0);
+            // rnd = false;
           }
           x++;
           
         }
-        if (rnd)
-        {
-          handleTweets(tweets,authors,times,Math.floor((Math.random() * tweets.length)));
+        if(!tweet_ind.length){
+          var x = 0;
+          while(x<tweets.length){
+            tweet_ind.push(x);
+            x++;
+          }
+          shuffle(tweet_ind);
         }
+        handleTweets(tweet_ind.shift());
+        
         
       }
       else{
@@ -227,7 +266,13 @@
         times.splice(maxTweets, (times.length - maxTweets));
         tids.splice(maxTweets, (tids.length - maxTweets));
       }
-      handleTweets(tweets,authors,times,0);
+      var x = 0;
+      while(x<tweets.length){
+        tweet_ind.push(x);
+        x++;
+      }
+      shuffle(tweet_ind);
+      handleTweets(tweet_ind.shift());
     }
 
       
