@@ -55,9 +55,9 @@ function update_tweets() {
             //file exists
         }
     });
-    console.log(ajaxImagesResultObject);
+    
     request.done(function(ajaxImagesResultObject){
-
+        console.log(ajaxImagesResultObject);
     });
     back = [{src: 'images/backgrounds/' + '%03d'.sprintf(i) + '.jpg'},{src: 'images/backgrounds/' + '%03d'.sprintf(i+1) + '.jpg'}];
    $('body').vegas('destroy');
