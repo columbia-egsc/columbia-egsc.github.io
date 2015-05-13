@@ -50,8 +50,11 @@ function update_tweets() {
         {
             i=1;
         },
-        success: function()
+        success: function(a,b,c)
         {
+          console.log(a);
+          console.log(b);
+          console.log(c);
             //file exists
         }
     });
