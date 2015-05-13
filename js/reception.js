@@ -46,21 +46,10 @@ function update_tweets() {
     var request = $.ajax({
         url: 'images/backgrounds/' + '%03d'.sprintf(i+1) + '.jpg',
         type:'HEAD',
-        error: function()
-        {
-            i=1;
-        },
-        success: function(a,b,c)
-        {
-          console.log(a);
-          console.log(b);
-          console.log(c);
-            //file exists
-        }
     });
     
-    request.done(function(ajaxImagesResultObject){
-        console.log(ajaxImagesResultObject);
+    request.fail(function(){
+        i=1;
     });
     back = [{src: 'images/backgrounds/' + '%03d'.sprintf(i) + '.jpg'},{src: 'images/backgrounds/' + '%03d'.sprintf(i+1) + '.jpg'}];
    $('body').vegas('destroy');
@@ -69,7 +58,7 @@ function update_tweets() {
       transition: 'random',
       transitionDuration: 4000,
       delay:10000,
-      cover: false,
+      cover: true,
       slides: back
     });
     i=i+2;
