@@ -65,7 +65,7 @@ function add_one(array) {
 function update_insta_images()
 {
    var request = $.ajax({
-          url: 'https://api.instagram.com/v1/tags/columbiauniversity/media/recent?client_id=c2e5d37274f64185b741e9b39e09afd8',
+          url: 'https://api.instagram.com/v1/tags/seastheworld2015/media/recent?client_id=c2e5d37274f64185b741e9b39e09afd8',
           type:'GET',
           dataType: "jsonp",
       });
