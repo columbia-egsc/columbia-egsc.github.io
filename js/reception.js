@@ -11,6 +11,59 @@ window.setInterval(update_tweets, 20000);
 var tweet_ind = [];
 var image_ind = [];
 var first = true;
+var insta_images = [];
+var insta_ids = [];
+var insta_ind = [];
+var insta_tweet = true;
+// function httpGet(theUrl)
+// {
+//     var xmlHttp = new XMLHttpRequest();
+//     xmlHttp.open( "GET", theUrl, false );
+//     xmlHttp.send( null );
+//     return xmlHttp.responseText;
+// }
+function add_one(array) {
+    var x = 0 ;
+
+    // While there remain elements to shuffle...
+    while (x<array.length) {
+
+      // Pick a remaining element...
+      array[x] = array[x]+1;
+      x++;
+    }
+
+    return array;
+}
+
+function update_insta_images()
+{
+   var request = $.ajax({
+          url: 'https://api.instagram.com/v1/tags/columbiauniversity/media/recent?client_id=c2e5d37274f64185b741e9b39e09afd8',
+          type:'GET',
+      });
+   request.done(function(data){
+      data = data.data;
+      var x = 0;
+      while(x<data.length){
+        var repeat = false;
+        var y = 0;
+        while(y<insta_ids.length){
+          if(data[x].id == insta_ids[y]){
+            repeat = true;
+            break;
+          }
+          y++;
+        }
+        if(!repeat){
+          insta_images.unshift(data[x].standard_resolution.url);
+          insta_ids.unshift(data[x].id);
+          add_one(insta_ind);
+          insta_ind.unshift(0);
+        }
+      }
+   });
+}
 
 function shuffle(array) {
   var currentIndex = array.length, temporaryValue, randomIndex ;
@@ -97,9 +150,9 @@ function update_tweets() {
     "update": true
     };
     twitterFetcher.fetch(config1);
-
+    update_insta_images();
     
-    if(images.length>0){
+    if(images.length>0 || insta_images.length>0){
       var request = $.ajax({
           url: 'images/backgrounds/' + '%03d'.sprintf(i) + '.jpg',
           type:'HEAD',
@@ -108,16 +161,30 @@ function update_tweets() {
       request.fail(function(){
           i=1;
       });
-      if(!image_ind.length){
-        var x = 0;
-        while(x<images.length){
-          image_ind.push(x);
-          x++;
+      if(images.length){
+        if(!image_ind.length){
+          var x = 0;
+          while(x<images.length){
+            image_ind.push(x);
+            x++;
+          }
+          shuffle(image_ind);
         }
-        shuffle(image_ind);
       }
+      if(insta_images.length){
+        if(!insta_ind.length){
+          var x = 0;
+          while(x<insta_images.length){
+            insta_ind.push(x);
+            x++;
+          }
+          shuffle(insta_ind);
+        }
+      }
+      url = insta_tweet ? (insta_images.length ? insta_images[insta_ind.shift()] : images[image_ind.shift()] ) : (images.length ? images[image_ind.shift()] : insta_images[insta_ind.shift()]);
+      insta_tweet = !insta_tweet;
 
-      back = [{src: 'images/backgrounds/' + '%03d'.sprintf(i) + '.jpg'},{src: images[image_ind.shift()]}];
+      back = [{src: 'images/backgrounds/' + '%03d'.sprintf(i) + '.jpg'},{src: url}];
       $('body').vegas('destroy');
         $('body').vegas({
           animation: 'random',
@@ -198,6 +265,13 @@ twitterFetcher.fetch(config1);
         // will fade out the whole DIV that covers the website.
 	jQuery(".preloader").delay(1000).fadeOut("slow");
   update_tweets();
+  update_insta_images();
+  var x = 0;
+  while(x<insta_images.length){
+    insta_ind.push(x);
+  }
+  shuffle(insta_ind);
+
 })
 
 $(document).ready(function() {
