@@ -22,6 +22,33 @@ var insta_tweet = true;
 //     xmlHttp.send( null );
 //     return xmlHttp.responseText;
 // }
+
+function createCORSRequest(method, url) {
+  var xhr = new XMLHttpRequest();
+  if ("withCredentials" in xhr) {
+
+    // Check if the XMLHttpRequest object has a "withCredentials" property.
+    // "withCredentials" only exists on XMLHTTPRequest2 objects.
+    xhr.open(method, url, true);
+
+  } else if (typeof XDomainRequest != "undefined") {
+
+    // Otherwise, check if XDomainRequest.
+    // XDomainRequest only exists in IE, and is IE's way of making CORS requests.
+    xhr = new XDomainRequest();
+    xhr.open(method, url);
+
+  } else {
+
+    // Otherwise, CORS is not supported by the browser.
+    xhr = null;
+
+  }
+  return xhr;
+}
+
+
+
 function add_one(array) {
     var x = 0 ;
 
@@ -38,11 +65,10 @@ function add_one(array) {
 
 function update_insta_images()
 {
-   var request = $.ajax({
-          url: 'https://api.instagram.com/v1/tags/columbiauniversity/media/recent?client_id=c2e5d37274f64185b741e9b39e09afd8',
-          type:'GET',
-      });
-   request.done(function(data){
+   
+   url = 'https://api.instagram.com/v1/tags/columbiauniversity/media/recent?client_id=c2e5d37274f64185b741e9b39e09afd8';
+   var xhr = createCORSRequest('GET', url);
+   xhr.onload = function(data){
       data = data.data;
       var x = 0;
       while(x<data.length){
@@ -62,7 +88,8 @@ function update_insta_images()
           insta_ind.unshift(0);
         }
       }
-   });
+   };
+  xhr.send();
 }
 
 function shuffle(array) {
@@ -153,14 +180,14 @@ function update_tweets() {
     update_insta_images();
     
     if(images.length>0 || insta_images.length>0){
-      var request = $.ajax({
-          url: 'images/backgrounds/' + '%03d'.sprintf(i) + '.jpg',
-          type:'HEAD',
-      });
+      // var request = $.ajax({
+      //     url: 'images/backgrounds/' + '%03d'.sprintf(i) + '.jpg',
+      //     type:'HEAD',
+      // });
       
-      request.fail(function(){
-          i=1;
-      });
+      // request.fail(function(){
+      //     i=1;
+      // });
       if(images.length){
         if(!image_ind.length){
           var x = 0;
@@ -197,14 +224,14 @@ function update_tweets() {
       i=i+1;
     }
     else{
-      var request = $.ajax({
-          url: 'images/backgrounds/' + '%03d'.sprintf(i+1) + '.jpg',
-          type:'HEAD',
-      });
+      // var request = $.ajax({
+      //     url: 'images/backgrounds/' + '%03d'.sprintf(i+1) + '.jpg',
+      //     type:'HEAD',
+      // });
       
-      request.fail(function(){
-          i=1;
-      });
+      // request.fail(function(){
+      //     i=1;
+      // });
       back = [{src: 'images/backgrounds/' + '%03d'.sprintf(i) + '.jpg'},{src: 'images/backgrounds/' + '%03d'.sprintf(i+1) + '.jpg'}];
         $('body').vegas('destroy');
           $('body').vegas({
