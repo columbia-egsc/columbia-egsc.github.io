@@ -117,7 +117,7 @@ function shuffle(array) {
 
 
 function callback(wh,slide){
-  if(wh.width<wh.height){
+  if(wh.width<1.25*wh.height){
     slide.css('background-size','contain') ;
   }
 }
