@@ -227,6 +227,13 @@
               tids_im.unshift(tmp[x].getAttribute('data-tweet-id'));
               add_one(image_ind);
               image_ind.unshift(0);
+              tweets.unshift(tmp[x].getElementsByClassName('e-entry-title')[0]);
+                
+              authors.unshift(tmp[x].getElementsByClassName('p-author')[0]);
+              times.unshift(tmp[x].getElementsByClassName('dt-updated')[0]);
+              tids.unshift(tmp[x].getAttribute('data-tweet-id'));
+              add_one(tweet_ind);
+              tweet_ind.unshift(0);
               // handleTweets(tweets,authors,times,0);
               // rnd = false;
             }
@@ -274,6 +281,11 @@
           if (tmp[x].getElementsByClassName('inline-media')[0] !== undefined) {
               images.push(extractImageUrl(tmp[x].getElementsByClassName('inline-media')[0]));
               tids_im.push(tmp[x].getAttribute('data-tweet-id'));
+              tweets.push(tmp[x].getElementsByClassName('e-entry-title')[0]);
+            
+              authors.push(tmp[x].getElementsByClassName('p-author')[0]);
+              times.push(tmp[x].getElementsByClassName('dt-updated')[0]);
+              tids.push(tmp[x].getAttribute('data-tweet-id'));
           }
           else{
             tweets.push(tmp[x].getElementsByClassName('e-entry-title')[0]);
