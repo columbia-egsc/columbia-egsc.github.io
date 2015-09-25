@@ -13,7 +13,7 @@ dept_map = {'Biomedical Engineering':'bme',
             'Computer Science':'coms',
             'Electrical Engineering':'elen',
             'Industrial Engineering and Operations Research':'ieor',
-            'Institute for Data Sciences & Engineering':'idse',
+            'Data Science Institute':'dsi',
             'Mechanical Engineering':'mech'}
 q1 = []
 q2 = []
