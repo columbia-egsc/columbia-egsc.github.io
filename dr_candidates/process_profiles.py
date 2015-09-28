@@ -3,14 +3,20 @@ import numpy as np
 import csv
 import re
 
+for subdir,dirs,files in os.walk('./'):
+  for file in files:
+    if file=='profiles.html':
+      os.remove(os.path.join(subdir, file))
 fname = []
 lname = []
 uni = []
 depts = []
-dept_map = {'Biomedical Engineering':'bme',
+dept_map = {'Applied Math and Applied Physics':'apam',
+            'Biomedical Engineering':'bme',
             'Chemical Engineering':'chem',
             'Civil Engineering and Engineering Mechanics':'ceem',
             'Computer Science':'coms',
+            'Earth and Environmental Engineering': 'eaee',
             'Electrical Engineering':'elen',
             'Industrial Engineering and Operations Research':'ieor',
             'Data Science Institute':'dsi',
@@ -32,8 +38,7 @@ with open('profiles.csv', 'rU') as csvfile:
                depts.append(dept_map[row[5]])
                q1.append(row[6])
                q2.append(row[10])
-               q3.append(row[11])
-               
+               q3.append(row[11])     
           else:
                print row[5]
 
@@ -41,7 +46,7 @@ uni_copy = [u for u in uni]
 
 for subdir,dirs,files in os.walk('./'):
      for file in files:
-          if file.split('.')[-1]=='jpg' and subdir.split('/')[-1] == 'pics':
+          if file.split('.')[-1]=='jpg':
                uni_c = file.split('.')[0]
                dept_c = subdir.split('/')[1]
                with open('./' + dept_c + '/profiles.html', "a") as htmlfile:
@@ -53,7 +58,7 @@ for subdir,dirs,files in os.walk('./'):
                <div class="team-member-image">
                     <img alt="" src="''')
                     
-                    htmlfile.write('pics/' + uni_c + '.jpg">')
+                    htmlfile.write(uni_c + '.jpg">')
                     
                     htmlfile.write('''
                </div>
