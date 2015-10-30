@@ -1941,6 +1941,15 @@
 		padding-left: 0.25em;
 	}
 
+	ol.roman {
+		list-style: lower-roman;
+		padding-left: 1.25em;
+	}
+
+	ol.roman li {
+		padding-left: 0.25em;
+	}
+
 	ul.default {
 		list-style: disc;
 		padding-left: 1em;
