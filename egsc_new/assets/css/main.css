@@ -1601,7 +1601,7 @@
 		color: inherit;
 		font-weight: 300;
 		line-height: 1.75em;
-		margin-bottom: 1em;
+		margin-bottom: 0.5em;
 		text-transform: uppercase;
 	}
 
@@ -1609,6 +1609,11 @@
 		color: inherit;
 		text-decoration: none;
 		border: 0;
+	}
+
+	h1 {
+		font-size: 2em;
+		letter-spacing: 0.15em;
 	}
 
 	h2 {
@@ -1679,6 +1684,15 @@
 
 	header.special:after {
 		right: 0;
+	}
+
+	header.special h1 {
+		margin-bottom: 0;
+	}
+
+	header.special h1 + p {
+		margin-bottom: 0;
+		padding-top: 2em;
 	}
 
 	header.special h2 {
@@ -1810,6 +1824,25 @@
 	.image.featured img {
 		display: block;
 		width: 100%;
+	}
+
+	.member {
+		display: block;
+		width: 100%;
+		max-width: 200px;
+		margin: 0 auto 50px;
+	}
+
+	.member img {
+		display: block;
+		border-radius: 50%;
+		max-width:100%;
+		vertical-align: middle;
+		border: 0;
+		height: 200px;
+		width: 200px;
+		margin-left: auto;
+		margin-right: auto;
 	}
 
 	/* Icon */
@@ -2457,6 +2490,18 @@
 		padding: 3px 0 3px 0;
 	}
 
+	#banner .inner header h1 {
+		border-bottom: solid 2px;
+		border-top: solid 2px;
+		font-size: 2.5em;
+		font-weight: 1000;
+		letter-spacing: 0.25em;
+		margin: 0;
+		padding-left: 0.05em;
+		position: relative;
+		text-transform: uppercase;
+	}
+
 	#banner .inner header h2 {
 		border-bottom: solid 2px;
 		border-top: solid 2px;
@@ -2749,6 +2794,10 @@
 			width: 40%;
 		}
 
+		header.special h1 + p {
+			padding-top: 1.5em;
+		}
+
 		header.special h2 + p {
 			padding-top: 1.25em;
 		}
@@ -3034,6 +3083,11 @@
 			min-width: 320px;
 		}
 
+		h1 {
+			font-size: 1.5em;
+			letter-spacing: 0.15em;
+		}
+
 		h2 {
 			font-size: 1.25em;
 			letter-spacing: 0.1em;
@@ -3154,6 +3208,10 @@
 			background: none;
 			display: block;
 			padding: 0 1.5em;
+		}
+
+		#banner .inner header h1 {
+			font-size: 2em;
 		}
 
 		#banner .inner header h2 {
