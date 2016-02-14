@@ -2071,12 +2071,12 @@
 
 	table.default td {
 		padding: 0.5em 1em 0.5em 1em;
+		text-align: center;
 	}
 
 	table.default th {
 		font-weight: 400;
 		padding: 0.5em 1em 0.5em 1em;
-		text-align: left;
 	}
 
 	table.default thead {
