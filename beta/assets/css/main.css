@@ -1884,7 +1884,7 @@
 	}
 
 	.icon.circle.fa-twitter {
-		background: #70aecd;
+		background: #55acee;
 		color: #fff;
 	}
 
@@ -1911,7 +1911,7 @@
 	}
 
 	.icon.circle.fa-facebook {
-		background: #7490c3;
+		background: #3b5998;
 		color: #fff;
 	}
 
@@ -1935,6 +1935,15 @@
 
 	.icon.circle.fa-github:hover {
 		background: #e1b89b;
+	}
+
+	.icon.circle.fa-instagram {
+		background: #3f729b;
+		color: #fff;
+	}
+
+	.icon.circle.fa-instagram:hover {
+		background: #3f9aab;
 	}
 
 	.icon.circle.fa-dribbble {
