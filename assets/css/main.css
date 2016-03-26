@@ -1617,7 +1617,7 @@
 	h1, h2, h3, h4, h5, h6 {
 		color: inherit;
 		font-weight: 300;
-		line-height: 1.75em;
+		line-height: 1.75em !important;
 		margin-bottom: 0.5em;
 		text-transform: uppercase;
 	}
