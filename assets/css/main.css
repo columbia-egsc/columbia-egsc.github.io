@@ -2366,16 +2366,15 @@
 		border: solid 1px;
 	}
 
-	#logo{
-		width: 328px;
+	#logo {
+		width: 327px;
 		height: 40px;
 		background-size: contain;
 		background-image: url("../../images/seas_black.png");
 	}
 
-	#logo.alt{
+	.alt #logo {
 		background-image: url("../../images/seas.png") !important;
-		}
 	}
 
 	/* Dropotron */
