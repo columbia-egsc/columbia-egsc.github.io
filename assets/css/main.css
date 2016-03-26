@@ -2367,14 +2367,14 @@
 	}
 
 	#logo{
-	    width: 328px;
-	    height: 40px;
-	    background-size: contain;
-	    background-image: url("../../images/seas_black.png");
+		width: 328px;
+		height: 40px;
+		background-size: contain;
+		background-image: url("../../images/seas_black.png");
 	}
 
 	#logo.alt{
-	    background-image: url("../../images/seas.png") !important;
+		background-image: url("../../images/seas.png") !important;
 		}
 	}
 
