@@ -2271,6 +2271,10 @@ body{
 		width: 100%;
 		z-index: 10002;
 		padding: 20px !important;
+		
+	}
+
+	#header.alt{
 		background-color: rgba(0,0,0,0.5) !important;
 	}
 
