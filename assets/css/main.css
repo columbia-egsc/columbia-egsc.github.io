@@ -14,10 +14,12 @@
 	.department h2{
 		padding-top: 40px;
 		padding-bottom: 20px;
+		color: #4c5051 !important;
 }
 	.row h2{
 		padding-top:0px !important;
 		padding-bottom:0px !important;
+		color: #6c7071 !important;
 	}
 	.department > .row{
 
@@ -1582,12 +1584,12 @@
 	}
 
 	body, input, select, textarea {
-		color: #7c8081;
-		font-family: 'Lato', sans-serif;
-		font-size: 15pt;
-		font-weight: 300;
-		letter-spacing: 0.025em;
-		line-height: 1.75em;
+		color: #7c8081 !important;
+		font-family: 'Lato', sans-serif !important;
+		font-size: 15pt !important;
+		font-weight: 300 !important;
+		letter-spacing: 0.025em !important;
+		line-height: 1.75em !important;
 	}
 
 	a {
