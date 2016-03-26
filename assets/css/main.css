@@ -10,6 +10,9 @@
 
 	/* Reset */
 
+body{
+	margin: 0px !important;
+}
 #logo{
 
     width: 320px;
