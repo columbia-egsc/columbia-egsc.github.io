@@ -14,20 +14,14 @@ body{
 	margin: 0px !important;
 }
 #logo{
-
     width: 320px;
     height: 40px;
     background-size: contain;
     background-image: url("../../images/seas_black.png") ;
-
-
-	}
+}
 
 .alt #logo{
-
     background-image: url("../../images/seas.png") !important;
-
-
 	}
 }
 
@@ -2276,6 +2270,8 @@ body{
 		top: 0;
 		width: 100%;
 		z-index: 10002;
+		padding: 20px !important;
+		background-color: rgba(0,0,0,0.5) !important;
 	}
 
 	#header h1 {
