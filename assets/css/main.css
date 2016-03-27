@@ -2252,6 +2252,20 @@
 		}
 	}
 
+	#egsc {
+		padding-bottom: 10px;
+	}
+
+	.egsc {
+		width: 10%;
+	}
+
+	@media screen and (max-width: 640px) {
+		.egsc {
+			width: 20%;
+		}
+	}
+
 	#header {
 		background: #fff;
 		box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.075);
@@ -2519,10 +2533,9 @@
 		border-bottom: solid 2px;
 		border-top: solid 2px;
 		font-size: 2.5em;
-		font-weight: 1000;
+		font-weight: 900;
 		letter-spacing: 0.25em;
 		margin: 0;
-		padding-left: 0.05em;
 		position: relative;
 		text-transform: uppercase;
 	}
@@ -2534,8 +2547,10 @@
 		font-weight: 900;
 		letter-spacing: 0.2em;
 		margin: 0;
-		padding-left: 0.05em;
+		padding-left: 0.5em;
+		padding-right: 0.5em;
 		position: relative;
+		text-align: center;
 		text-transform: uppercase;
 	}
 
