@@ -61,7 +61,7 @@ for dept in dept_counter_map:
         deptfile.write('            <div id="logo"></div>\n')
         deptfile.write('            <nav id="nav">\n')
         deptfile.write('                <ul>\n')
-        deptfile.write('                    <li><a href=".">Candidates Home</a></li>\n')
+        deptfile.write('                    <li><a href="/dr_candidates">Candidates Home</a></li>\n')
         deptfile.write('                    <li class="submenu current">\n')
         deptfile.write('                        <a href="">Departments</a>\n')
         deptfile.write('                        <ul>\n')
