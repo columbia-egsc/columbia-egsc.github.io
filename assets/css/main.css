@@ -28,6 +28,14 @@
 		line-height: 1;
 	}
 
+	ol, ul {
+		list-style: none;
+	}
+
+	ol.decimal {
+		list-style: number;
+	}
+
 	blockquote, q {
 		quotes: none;
 	}
