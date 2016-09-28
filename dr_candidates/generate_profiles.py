@@ -4,35 +4,35 @@ import os
 department_names_codes_map = {'Applied Physics and Applied Mathematics': 'apam',
                               'Biomedical Engineering': 'bmen',
                               'Civil Engineering and Engineering Mechanics': 'ceem',
-                              'Chemical Engineering': 'chem',
+                              'Chemical Engineering': 'chen',
                               'Computer Science': 'coms',
                               'Data Science Institute': 'dsi',
                               'Earth and Environmental Engineering': 'eaee',
                               'Electrical Engineering': 'elen',
                               'Industrial Engineering and Operations Research': 'ieor',
-                              'Mechanical Engineering': 'mech'}
+                              'Mechanical Engineering': 'mece'}
 
 department_codes_names_map = {'apam': 'Applied Physics and Applied Mathematics',
                               'bmen': 'Biomedical Engineering',
                               'ceem': 'Civil Engineering and Engineering Mechanics',
-                              'chem': 'Chemical Engineering',
+                              'chen': 'Chemical Engineering',
                               'coms': 'Computer Science',
                               'dsi': 'Data Science Institute',
                               'eaee': 'Earth and Environmental Engineering',
                               'elen': 'Electrical Engineering',
                               'ieor': 'Industrial Engineering and Operations Research',
-                              'mech': 'Mechanical Engineering'}
+                              'mece': 'Mechanical Engineering'}
 
 dept_counter_map = {'apam': 0,
                     'bmen': 0,
                     'ceem': 0,
-                    'chem': 0,
+                    'chen': 0,
                     'coms': 0,
                     'dsi': 0,
                     'eaee': 0,
                     'elen': 0,
                     'ieor': 0,
-                    'mech': 0}
+                    'mece': 0}
 
 for dept in dept_counter_map:
     try:
@@ -68,13 +68,13 @@ for dept in dept_counter_map:
         deptfile.write('                            <li><a href="/dr_candidates/apam/">APAM</a></li>\n')
         deptfile.write('                            <li><a href="/dr_candidates/bmen/">BMEN</a></li>\n')
         deptfile.write('                            <li><a href="/dr_candidates/ceem/">CEEM</a></li>\n')
-        deptfile.write('                            <li><a href="/dr_candidates/chem/">CHEM</a></li>\n')
+        deptfile.write('                            <li><a href="/dr_candidates/chen/">CHEN</a></li>\n')
         deptfile.write('                            <li><a href="/dr_candidates/coms/">COMS</a></li>\n')
         deptfile.write('                            <li><a href="/dr_candidates/dsi/">DSI</a></li>\n')
         deptfile.write('                            <li><a href="/dr_candidates/eaee/">EAEE</a></li>\n')
         deptfile.write('                            <li><a href="/dr_candidates/elen/">ELEN</a></li>\n')
         deptfile.write('                            <li><a href="/dr_candidates/ieor/">IEOR</a></li>\n')
-        deptfile.write('                            <li><a href="/dr_candidates/mech/">MECH</a></li>\n')
+        deptfile.write('                            <li><a href="/dr_candidates/mece/">MECE</a></li>\n')
         deptfile.write('                        </ul>\n')
         deptfile.write('                    </li>\n')
         deptfile.write('                    <li><a href="/">Back to EGSC</a></li>\n')
