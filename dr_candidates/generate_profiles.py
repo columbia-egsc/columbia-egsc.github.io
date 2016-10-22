@@ -115,7 +115,7 @@ with open('dr-applications.csv', 'r') as csvfile:
                 deptfile.write('                            </div>\n')
                 deptfile.write('                            <header>\n')
                 deptfile.write('                                <h2>' + row[1] + ' ' + row[2] + '</h2>\n')
-                deptfile.write('                                <p><a href="' + row[3] +'">' + row[3] + '</a></p>\n')
+                deptfile.write('                                <p class="centered"><a href="' + row[3] +'">' + row[3] + '</a></p>\n')
                 deptfile.write('                            </header>\n')
                 deptfile.write('                        </div>\n')
                 deptfile.write('                        <div class="8u 12u(narrower)">\n')
