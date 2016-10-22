@@ -55,6 +55,13 @@
 		text-align: justify;
 	}
 
+	p.centered {
+		text-align: center;
+	}
+
+	p.no-margin {
+		margin: 0;
+	}
 
 	/* Box Model */
 
@@ -2009,6 +2016,10 @@
 
 	ul.default li {
 		padding-left: 0.5em;
+	}
+
+	ul.centered {
+		text-align: center;
 	}
 
 	ul.icons {
