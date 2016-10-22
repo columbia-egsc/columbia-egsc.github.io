@@ -54,6 +54,11 @@
 		-webkit-text-size-adjust: none;
 	}
 
+	p {
+		text-align: justify;
+	}
+
+
 	/* Box Model */
 
 	*, *:before, *:after {
@@ -3148,10 +3153,6 @@
 		h3 {
 			font-size: 1em;
 			letter-spacing: 0.025em;
-		}
-
-		p {
-			text-align: justify;
 		}
 
 		/* Section/Article */
