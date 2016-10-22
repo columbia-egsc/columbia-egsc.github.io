@@ -30,10 +30,7 @@
 
 	ol, ul {
 		list-style: none;
-	}
-
-	ol.decimal {
-		list-style: number;
+		text-align: justify;
 	}
 
 	blockquote, q {
@@ -1999,6 +1996,10 @@
 
 	ol.default li {
 		padding-left: 0.25em;
+	}
+
+	ol.lower-roman {
+		list-style: lower-roman;
 	}
 
 	ul.default {
