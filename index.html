@@ -9,6 +9,7 @@
 	<link rel="icon" type="image/ico" href="favicon.ico" />
 	<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 	<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+	<link rel='stylesheet' href='fullcalendar/fullcalendar.css' />
 </head>
 <body class="index">
 	<div id="page-wrapper">
@@ -62,6 +63,9 @@
 				Keep in touch with us by following the various links in the footer!
 			</header>
 		</article>
+		<!-- Calendar div -->
+		<div id="calendar">
+		</div>
 		<footer id="footer">
 			<ul class="icons centered">
 				<li><a href="https://lists.columbia.edu/mailman/listinfo/egsc-announcements" class="icon circle fa-envelope" target="_blank"><span class="label">Mailing List</span></a></li>
@@ -83,6 +87,9 @@
 	<script src="assets/js/jquery.scrollgress.min.js"></script>
 	<script src="assets/js/skel.min.js"></script>
 	<script src="assets/js/util.js"></script>
+	<!-- Fullcalendar Scripts -->
+	<script src='fullcalendar/lib/moment.min.js'></script>
+	<script src='fullcalendar/fullcalendar.js'></script>
 	<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 	<script src="assets/js/main.js"></script>
 	<script>
@@ -92,6 +99,18 @@
 		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 		ga('create', 'UA-75633179-1', 'auto');
 		ga('send', 'pageview');
+	</script>
+	<!-- Insert FullCalendar -->
+	<script>
+	$(document).ready(function() {
+
+    // page is now ready, initialize the calendar...
+
+    $('#calendar').fullCalendar({
+        // put your options and callbacks here
+    })
+
+	});
 	</script>
 </body>
 </html>
