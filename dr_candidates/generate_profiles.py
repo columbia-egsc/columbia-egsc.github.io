@@ -132,6 +132,7 @@ with open('dr-applications.csv', 'r') as csvfile:
             dept_counter_map[department_names_codes_map[row[5]]] += 1
 
     print dept_counter_map
+    csvfile.close()
 
 for dept in dept_counter_map:
     filename = dept + '/index.html'
