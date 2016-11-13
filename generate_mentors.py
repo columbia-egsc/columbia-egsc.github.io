@@ -151,7 +151,7 @@ with open(filename, 'w') as mentors_file:
 			mentors_file.write('						</div>\n')
 			mentors_file.write('					</div>\n')
 			if mentor_index + 1 < len(mentors_dict[dept]) and len(mentors_dict[dept]) > 1:
-				mentors_file.write('					<hr class="inter">')
+				mentors_file.write('					<hr class="inter">\n')
 		mentors_file.write('					<hr>\n')
 
 	mentors_file.write('				</div>\n')
