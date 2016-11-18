@@ -1,0 +1,30 @@
+<html>
+<head>
+    <style>
+        #video { border: 0px solid black; 
+        	background: #000000}
+        video {
+  width: 100%    !important;
+  height: 100%   !important;
+}
+        #video-overlay { position: absolute; width: 100%; height: 100%; z-index: 999; color: #AAAAAA; font-size: 20; }
+    </style>
+    
+    
+</head>
+<body>
+<div id="video-overlay">Click on the video to play or pause</div>
+<video id="video"  />
+      <source id='mp4'
+        src="../video6.mp4"
+        type='video/mp4'>
+        <track label="English subtitles" kind="subtitles" srclang="en" src="../video6.vtt" default=""></track>
+</video>
+<script src="../../js/jquery1.11.3.min.js"></script>
+<script type='text/javascript'>
+    document.getElementById('video').addEventListener('ended',a6,false);
+    
+</script>
+
+</body>
+</html>
