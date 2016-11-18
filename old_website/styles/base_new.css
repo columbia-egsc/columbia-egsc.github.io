@@ -1,0 +1,85 @@
+body {
+	margin: 0px;
+	padding: 0px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	line-height: 1.5em;
+	background-color: #222222;
+}
+td {
+	vertical-align:top;
+}
+#container {
+	margin-right: auto;
+	margin-left: auto;
+	width: 800px;
+	text-align: left;
+	background-color: #111111;
+}
+#header {}
+#contenttable {
+	width: 760px;
+	text-align: left;
+
+}
+.navtd {
+	background-color: #000000;
+	width: 170px;
+}
+.contenttd {
+	padding: 5px 10px 10px;
+	font-color: #000000;
+}
+#footer {
+
+	width: 760px;
+	text-align: left;
+}
+#footer p {
+	margin-top: 20px;
+	margin-left: 180px;
+	margin-bottom: 10px;
+}
+.designed {
+	font-size: 10px;
+}
+
+/* Navigation Styles */
+.buttonscontainer {
+	width: 170px;
+}
+.buttons a:link, .buttons a:visited {
+	color: #B3E4FA;
+	padding: 2px 10px;
+	display: block;
+	border-bottom: 1px solid #000000;
+	font: bold 12px/21px Verdana, sans-serif;
+	text-decoration: none;
+	text-align: left;
+	background-image: url(../images/button-bg.gif);
+	background-position: top;
+	width: 150px;
+}
+.buttons a:hover {
+	background-color: #999999;
+	color: #FFF;
+	text-decoration: none;
+	background-position: bottom;
+}
+
+/* Text and Link Styles */
+h1, h2, h3, h4 {
+	line-height: normal;
+	font-size: 16px;
+	font-color: #ffffff;
+	margin: 0px;
+	padding: 0px;
+}
+a:link, a:visited {
+	color: #3a87e6;
+	text-decoration: none;
+}
+a:hover {
+	color: #3a87e6;
+	text-decoration: none;
+}
