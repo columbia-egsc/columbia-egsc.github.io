@@ -21,7 +21,7 @@ for filename in reversed(os.listdir(path)):
         entry = soup.new_tag("li")
         link = soup.new_tag("a", href=location)
         link.string = linkname
-        agenda_section.insert_after(entry)
+        agenda_section.insert(1, entry)
         entry.insert(1, link)
 
 html = soup.prettify("utf-8")
