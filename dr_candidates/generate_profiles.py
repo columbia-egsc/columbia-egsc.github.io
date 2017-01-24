@@ -118,7 +118,7 @@ for dept in dept_counter_map:
 		deptfile.write('                <div class="content">\n')
 		deptfile.close()
 
-with open('dr-applications.csv', 'r') as csvfile:
+with open('dr-applications.csv', 'rU') as csvfile:
 	dr_reader = csv.reader(csvfile)
 	for row in dr_reader:
 		if row[5] in department_names_codes_map:
