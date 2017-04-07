@@ -24,6 +24,18 @@ for filename in reversed(os.listdir(path)):
         agenda_section.insert(1, entry)
         entry.insert(1, link)
 
+agenda_section = soup.find('ul', class_ = "minutes_header")
+path = "minutes/"
+for filename in reversed(os.listdir(path)):
+    if filename.endswith(".pdf"):
+        linkname = filename.split(".pdf")[0]
+        location = path + filename
+        entry = soup.new_tag("li")
+        link = soup.new_tag("a", href=location)
+        link.string = linkname
+        agenda_section.insert(1, entry)
+        entry.insert(1, link)
+
 html = soup.prettify("utf-8")
 with open(sourcefile, "wb") as file:
     file.write(html)
