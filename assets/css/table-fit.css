@@ -1,0 +1,11 @@
+table .absorbing-column {
+	width: 100%;
+}
+
+th {
+	padding-right: 2em;
+}
+
+td {
+	padding-right: 2em;
+}
